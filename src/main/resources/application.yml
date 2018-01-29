@@ -6,8 +6,15 @@ server:
   port: ${port:8761}
 
 eureka:
+  server:
+    enable-self-preservation: true
+  instance:
+    appname: simple-discovery-server-testapp
+    preferIpAddress: true
   client:
     register-with-eureka: false
     fetch-registry: false
-  server:
-    enable-self-preservation: true
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+
+    

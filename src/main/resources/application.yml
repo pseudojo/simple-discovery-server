@@ -21,6 +21,5 @@ eureka:
     # it must set variable server port when it registers itself
     serviceUrl:
       defaultZone: http://localhost:${server.port:8761}/eureka/
-      
-      
+    enabled: ${eureka.client.enabled:true}
     

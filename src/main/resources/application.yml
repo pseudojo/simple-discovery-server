@@ -8,6 +8,11 @@ info:
 server:
   port: ${port:8761}
 
+# development only (non-secured)
+management:
+  security:
+    enabled: false
+
 eureka:
   server:
     enable-self-preservation: true
@@ -22,4 +27,3 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:${server.port:8761}/eureka/
     enabled: ${example.eureka.client.enabled:true}
-    
